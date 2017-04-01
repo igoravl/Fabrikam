@@ -1,4 +1,5 @@
-﻿namespace FabrikamFiber.Web.Tests
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+namespace FabrikamFiber.Web.Tests
 {
     using System;
     using System.Linq;
@@ -36,6 +37,15 @@
         public void CreateNullCustomer()
         {
             controller.Create(null);
+        }
+
+        [TestMethod]
+        public void Testar_Foo()
+        {
+            CustomersController controller = new CustomersController();
+
+            controller.Foo();
+
         }
 
         [TestMethod()]
