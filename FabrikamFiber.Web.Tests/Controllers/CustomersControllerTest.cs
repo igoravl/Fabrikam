@@ -39,15 +39,6 @@ namespace FabrikamFiber.Web.Tests
             controller.Create(null);
         }
 
-        [TestMethod]
-        public void Testar_Foo()
-        {
-            CustomersController controller = new CustomersController();
-
-            controller.Foo();
-
-        }
-
         [TestMethod()]
         public void EditUpdatesCustomerAndSaves()
         {
