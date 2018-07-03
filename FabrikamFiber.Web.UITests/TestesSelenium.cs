@@ -9,7 +9,7 @@ namespace FabrikamFiber.Web.UiTests_v14
     [TestClass]
     public class TestesSelenium
     {
-        private const string URL = "http://localhost:16535";
+        private const string URL = "http://callcenter.fabrikamfiber.com";
 
         [TestMethod]
         public void Teste_Cadastro_Usando_ChromeDriver()
@@ -43,7 +43,7 @@ namespace FabrikamFiber.Web.UiTests_v14
         {
             try
             {
-                var sobrenome = $"Doe {DateTime.Now:HHmmss}";
+                var lastName = $"Doe {DateTime.Now:HHmmss}";
 
                 // Abre browser 
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -59,7 +59,7 @@ namespace FabrikamFiber.Web.UiTests_v14
                 // Insere registro
 
                 driver.FindElement(By.CssSelector("#FirstName")).SendKeys("John");
-                driver.FindElement(By.CssSelector("#LastName")).SendKeys(sobrenome);
+                driver.FindElement(By.CssSelector("#LastName")).SendKeys(lastName);
                 driver.FindElement(By.CssSelector("#Address_Street")).SendKeys("123 ABC St.");
                 driver.FindElement(By.CssSelector("#Address_City")).SendKeys("Bellevue");
                 driver.FindElement(By.CssSelector("#Address_State")).SendKeys("WA");
@@ -71,7 +71,7 @@ namespace FabrikamFiber.Web.UiTests_v14
 
                 var celula = driver.FindElement(By.CssSelector("table.dataTable>tbody>tr:last-child>td:nth-child(3)"));
                 var conteudoCelula = celula.Text.Trim();
-                Assert.AreEqual(sobrenome, conteudoCelula, "Sobrenome não confere");
+                Assert.AreEqual(lastName, conteudoCelula, "Sobrenome não confere");
             }
             finally
             {
